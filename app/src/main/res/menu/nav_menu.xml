@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Inicio"/>
+        <item
+            android:id="@+id/nav_reservas"
+            android:icon="@drawable/ic_reservas"
+            android:title="Mis Reservas"/>
+        <item
+            android:id="@+id/nav_vehiculos"
+            android:icon="@drawable/ic_vehiculos"
+            android:title="Vehículos"/>
+
+        <item
+            android:id="@+id/nav_listado_caravanas"
+            android:icon="@drawable/ic_caravan_list"
+        android:title="Listado de Caravanas"/>
+
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_profile"
+            android:title="Mi Perfil"/>
+    </group>
+    <item android:title="Opciones">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="Configuración"/>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Cerrar sesión"/>
+        </menu>
+    </item>
+</menu>

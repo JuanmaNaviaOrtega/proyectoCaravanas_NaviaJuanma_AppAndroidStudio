@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">proyectoCaravanas_NaviaJuanma</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="no_account_register">¿No tienes cuenta? Regístrate</string>
+    <string name="add_reservation">Añadir nueva reserva</string>
+    <string name="no_reservas">No tienes reservas actualmente</string>
+</resources>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <!-- Auth Flow -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.proyectocaravanas_naviajuanma.Auth.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.proyectocaravanas_naviajuanma.Auth.RegisterFragment"
+        android:label="Registro"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <!-- Main Flow -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.proyectocaravanas_naviajuanma.HomeFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_reservasFragment"
+            app:destination="@id/reservasFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_vehiculosDisponiblesFragment"
+            app:destination="@id/vehiculosDisponiblesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_listadoCaravanasFragment"
+            app:destination="@id/listadoCaravanasFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reservasFragment"
+        android:name="com.example.proyectocaravanas_naviajuanma.reservations.ReservasFragment"
+        android:label="Mis Reservas"
+        tools:layout="@layout/fragment_reservas">
+        <action
+            android:id="@+id/action_reservasFragment_to_vehiculosDisponiblesFragment"
+            app:destination="@id/vehiculosDisponiblesFragment" />
+        <action
+            android:id="@+id/action_reservasFragment_to_reservaDetailFragment"
+            app:destination="@id/reservaDetailFragment" />
+        <action
+            android:id="@+id/action_reservasFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <!-- Acción para editar reserva -->
+        <action
+            android:id="@+id/action_reservasFragment_to_editarReservaFragment"
+            app:destination="@id/editarReservaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/vehiculosDisponiblesFragment"
+        android:name="com.example.proyectocaravanas_naviajuanma.vehicles.VehiculosDisponiblesFragment"
+        android:label="Vehículos Disponibles"
+        tools:layout="@layout/fragment_vehiculos_disponibles">
+        <action
+            android:id="@+id/action_vehiculosDisponiblesFragment_to_createReservaFragment"
+            app:destination="@id/createReservaFragment" />
+        <action
+            android:id="@+id/action_vehiculosDisponiblesFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createReservaFragment"
+        android:name="com.example.proyectocaravanas_naviajuanma.reservations.CreateReservaFragment"
+        android:label="CreateReservaFragment"
+        tools:layout="@layout/fragment_create_reserva" >
+        <argument
+            android:name="vehiculoId"
+            app:argType="integer" />
+        <argument
+            android:name="modelo"
+            app:argType="string" />
+        <argument
+            android:name="precioDia"
+            app:argType="float" />
+        <argument
+            android:name="fechaInicio"
+            app:argType="string" />
+        <argument
+            android:name="fechaFin"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reservaDetailFragment"
+        android:name="com.example.proyectocaravanas_naviajuanma.reservations.ReservaDetailFragment"
+        android:label="Detalle de Reserva"
+        tools:layout="@layout/fragment_reserva_detail">
+        <argument
+            android:name="reservaId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editarReservaFragment"
+        android:name="com.example.proyectocaravanas_naviajuanma.reservations.EditarReservaFragment"
+        android:label="Editar Reserva"
+        tools:layout="@layout/fragment_editar_reserva">
+        <argument
+            android:name="reservaId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.proyectocaravanas_naviajuanma.ProfileFragment"
+        android:label="Mi Perfil"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/vehiculosFragment"
+        android:name="com.example.proyectocaravanas_naviajuanma.vehicles.VehiculosFragment"
+        android:label="Nuestros Vehículos"
+        tools:layout="@layout/fragment_vehiculos">
+        <action
+            android:id="@+id/action_vehiculosFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listadoCaravanasFragment"
+        android:name="com.example.proyectocaravanas_naviajuanma.vehicles.ListadoCaravanasFragment"
+        android:label="Listado de Caravanas"
+        tools:layout="@layout/fragment_listado_caravanas">
+        <action
+            android:id="@+id/action_listadoCaravanasFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment" />
+</navigation>
